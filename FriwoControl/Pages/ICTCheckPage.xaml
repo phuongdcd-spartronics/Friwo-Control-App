@@ -1,0 +1,43 @@
+﻿<Page x:Class="FriwoControl.Pages.ICTCheckPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+      xmlns:uc="clr-namespace:FriwoControl.UserControls"
+      xmlns:local="clr-namespace:FriwoControl.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Check ICT Page" Background="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <uc:ucWorkInfo x:Name="ucWorkInfo" Started="ucWorkInfo_Started" />
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <TextBlock Text="Barcode:" VerticalAlignment="Center" FontSize="14pt" />
+            <TextBox x:Name="txtBarcode" MinWidth="200" Background="AliceBlue" IsEnabled="False"  PreviewKeyUp="txtBarcode_PreviewKeyUp" />
+        </StackPanel>
+        <TextBlock Grid.Row="2" x:Name="tbMessage" Foreground="Green" FontSize="14pt" FontWeight="Bold" Margin="5" />
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <uc:ucGridStatus x:Name="ucGridStatus" />
+            <telerik:RadGridView Grid.Column="1" x:Name="gvLog" ItemsSource="{Binding Logs}" AutoGenerateColumns="False" IsReadOnly="True"  FontSize="16pt" telerik:StyleManager.Theme="VisualStudio">
+                <telerik:RadGridView.Columns>
+                    <telerik:GridViewDataColumn Header="Serial number" DataMemberBinding="{Binding SerialNumber}" />
+                    <telerik:GridViewDataColumn Header="Shift" DataMemberBinding="{Binding Shift}" />
+                    <telerik:GridViewDataColumn Header="Date time" DataMemberBinding="{Binding Timespan}" />
+                    <telerik:GridViewDataColumn Header="Status" DataMemberBinding="{Binding Status}" />
+                </telerik:RadGridView.Columns>
+            </telerik:RadGridView>
+        </Grid>
+    </Grid>
+</Page>

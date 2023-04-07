@@ -1,0 +1,50 @@
+﻿<Application x:Class="FriwoControl.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:FriwoControl"
+             StartupUri="AuthWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="window-style" TargetType="Window">
+                <Setter Property="Background" Value="AliceBlue" />
+            </Style>
+            <Style x:Key="page-title" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="23pt" />
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="HorizontalAlignment" Value="Center" />
+                <Setter Property="Foreground" Value="MidnightBlue" />
+            </Style>
+            <Style TargetType="{x:Type TextBox}">
+                <Setter Property="telerik:StyleManager.Theme" Value="Material" />
+            </Style>
+            <Style TargetType="{x:Type CheckBox}">
+                <Setter Property="telerik:StyleManager.Theme" Value="Crystal" />
+            </Style>
+            <Style TargetType="{x:Type telerik:RadMenu}">
+                <Setter Property="telerik:StyleManager.Theme" Value="Material" />
+            </Style>
+            <Style TargetType="{x:Type telerik:RadWatermarkTextBox}">
+                <Setter Property="telerik:StyleManager.Theme" Value="Material" />
+            </Style>
+            <Style TargetType="{x:Type telerik:RadComboBox}">
+                <Setter Property="telerik:StyleManager.Theme" Value="Crystal" />
+            </Style>
+            <Style TargetType="{x:Type telerik:RadButton}">
+                <Setter Property="telerik:StyleManager.Theme" Value="Material" />
+            </Style>
+            <Style TargetType="{x:Type telerik:RadRadioButton}">
+                <Setter Property="telerik:StyleManager.Theme" Value="Material" />
+            </Style>
+            <Style TargetType="{x:Type telerik:RadNumericUpDown}">
+                <Setter Property="telerik:StyleManager.Theme" Value="Crystal" />
+            </Style>
+            <Style TargetType="{x:Type telerik:GroupBox}">
+                <Setter Property="telerik:StyleManager.Theme" Value="Material" />
+            </Style>
+            <Style TargetType="{x:Type telerik:RadGridView}">
+                <Setter Property="telerik:StyleManager.Theme" Value="VisualStudio" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

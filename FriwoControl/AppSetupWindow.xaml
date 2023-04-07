@@ -1,0 +1,72 @@
+﻿<Window xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"  x:Class="FriwoControl.AppSetupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FriwoControl"
+        xmlns:Printing="clr-namespace:System.Drawing.Printing;assembly=System.Drawing"
+        mc:Ignorable="d" Loaded="Window_Loaded" Style="{StaticResource window-style}"
+        Title="Application Setup" Height="470" Width="800" Icon="/app-icon.ico">
+    <StackPanel>
+        <StackPanel.Resources>
+            <Style TargetType="TextBlock" x:Key="text-title">
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="Margin" Value="5,5,10,5" />
+            </Style>
+        </StackPanel.Resources>
+
+        <telerik:GroupBox Header="ICT Settings">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="ICT Folder:" Style="{StaticResource text-title}" />
+                    <TextBox x:Name="txtICTFolder" MinWidth="200" IsReadOnly="True" ToolTip="{Binding Text}" />
+                    <telerik:RadButton x:Name="btnICTBrowse" Content="Browse" Background="AntiqueWhite" Click="btnICTBrowse_Click" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="ICT Interval:" Style="{StaticResource text-title}" />
+                    <telerik:RadNumericUpDown x:Name="nudICTInterval" Width="130" Minimum="5" Maximum="3600" NumberDecimalDigits="0" />
+                    <TextBlock Text="(seconds)" VerticalAlignment="Center" />
+                </StackPanel>
+            </StackPanel>
+        </telerik:GroupBox>
+
+        <telerik:GroupBox Header="ATE Settings">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="ATE Folder:" Style="{StaticResource text-title}" />
+                    <TextBox x:Name="txtATEFolder" MinWidth="200" IsReadOnly="True" ToolTip="{Binding Text}" />
+                    <telerik:RadButton x:Name="btnATEBrowse" Content="Browse" Background="AntiqueWhite" Click="btnATEBrowse_Click" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="ATE Interval:" Style="{StaticResource text-title}" />
+                    <telerik:RadNumericUpDown x:Name="nudATEInterval" Width="130" Minimum="5" Maximum="3600" NumberDecimalDigits="0" />
+                    <TextBlock Text="(seconds)" VerticalAlignment="Center" />
+                </StackPanel>
+            </StackPanel>
+        </telerik:GroupBox>
+
+        <telerik:GroupBox Header="UltraSonic Settings">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Clean up times:" Style="{StaticResource text-title}" />
+                    <telerik:RadNumericUpDown x:Name="nudUltraClean" Minimum="0" Maximum="9999" MinWidth="150" NumberDecimalDigits="0" />
+                </StackPanel>
+            </StackPanel>
+        </telerik:GroupBox>
+
+        <telerik:GroupBox Header="Final Station Settings">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Printer:" Style="{StaticResource text-title}" />
+                    <telerik:RadComboBox Grid.Row="2" Grid.Column="1" x:Name="cbbFinalPrinter" ItemsSource="{x:Static Printing:PrinterSettings.InstalledPrinters}"
+                      MinWidth="200" Height="30" VerticalContentAlignment="Center" />
+                </StackPanel>
+            </StackPanel>
+        </telerik:GroupBox>
+
+        <StackPanel Orientation="Horizontal">
+            <telerik:RadButton x:Name="btnSave" Content="Save" Background="DarkSeaGreen" Margin="10,10,0,0" Click="btnSave_Click" />
+        </StackPanel>
+
+    </StackPanel>
+</Window>

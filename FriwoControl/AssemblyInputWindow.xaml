@@ -1,0 +1,39 @@
+﻿<Window x:Class="FriwoControl.AssemblyInputWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:local="clr-namespace:FriwoControl"
+        mc:Ignorable="d"
+        Title="New Assembly Info" Height="380" Width="600">
+    <Border BorderBrush="Black" BorderThickness="3" Background="#eeeeee" Padding="10" CornerRadius="10">
+        <StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+            </Grid>
+
+            <TextBlock Grid.Column="1" Text="Enter assembly name" HorizontalAlignment="Center" TextAlignment="Justify" FontSize="20pt" TextWrapping="Wrap" />
+            <telerik:RadWatermarkTextBox x:Name="txtName" WatermarkContent="Assembly name" FontSize="14pt" Foreground="DarkGray" Margin="0,10,0,10" HorizontalAlignment="Center" TextAlignment="Justify" TextWrapping="Wrap" />
+
+            <TextBlock Grid.Column="1" Text="Enter quantity/package" HorizontalAlignment="Center" TextAlignment="Justify" FontSize="20pt" TextWrapping="Wrap" />
+            <telerik:RadWatermarkTextBox x:Name="txtQty" WatermarkContent="Quantity/package" FontSize="14pt" Foreground="DarkGray" Margin="0,10,0,10" HorizontalAlignment="Center" TextAlignment="Justify" TextWrapping="Wrap" />
+
+            <TextBlock Grid.Column="1" Text="Select product type" HorizontalAlignment="Center" TextAlignment="Justify" FontSize="20pt" TextWrapping="Wrap" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                <telerik:RadRadioButton x:Name="rdbGermany" GroupName="Type" Content="Germany" Width="100" IsChecked="True" Checked="RadRadioButton_Checked" />
+                <telerik:RadRadioButton GroupName="Type" Content="Vietnam" Width="100" Checked="RadRadioButton_Checked" />
+            </StackPanel>
+
+            <DockPanel HorizontalAlignment="Center">
+                <telerik:RadButton x:Name="btnCancel" Content="Cancel" Background="OrangeRed" CornerRadius="10" Cursor="Hand" Width="150" IsCancel="True" telerik:StyleManager.Theme="Material" Click="btnCancel_Click" />
+                <telerik:RadButton x:Name="btnConfirm" Content="OK" Background="DodgerBlue" CornerRadius="10" Cursor="Hand" Width="150" IsDefault="True" telerik:StyleManager.Theme="Material" Click="btnConfirm_Click" />
+            </DockPanel>
+
+        </StackPanel>
+    </Border>
+</Window>

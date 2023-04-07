@@ -1,0 +1,42 @@
+﻿<Page x:Class="FriwoControl.Pages.AtePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:uc="clr-namespace:FriwoControl.UserControls"
+      xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+      xmlns:local="clr-namespace:FriwoControl.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ATE Page" Background="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <uc:ucWorkInfo x:Name="ucWorkInfo" Started="ucWorkInfo_Started" />
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <TextBlock Text="Folder:" VerticalAlignment="Center" FontSize="16pt" />
+            <TextBox x:Name="txtPath" MinWidth="200" Background="AliceBlue" IsReadOnly="True" />
+        </StackPanel>
+        <telerik:RadButton Grid.Row="2" x:Name="btnStart" Content="Start" Background="LightGreen" Focusable="False" Click="btnStart_Click" />
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="5">
+            <CheckBox x:Name="chkScroll" Content="Auto-scrolling" IsChecked="True" Focusable="False" />
+            <telerik:RadButton x:Name="btnClear" Content="Clear Log" Background="Gold" Focusable="False" Click="btnClear_Click" />
+        </StackPanel>
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <uc:ucGridStatus x:Name="ucGridStatus" />
+            <RichTextBox Grid.Column="1" x:Name="rtxtLog" Background="#eeeeee" AcceptsReturn="True" AcceptsTab="True" IsReadOnly="True" FontFamily="Courier New" FontSize="13pt" />
+        </Grid>
+
+    </Grid>
+</Page>
