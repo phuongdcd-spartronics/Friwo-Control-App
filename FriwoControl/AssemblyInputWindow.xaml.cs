@@ -15,7 +15,8 @@ namespace FriwoControl
         public AssemblyInputWindow()
         {
             InitializeComponent();
-            _type = rdbGermany.Content.ToString();
+            //_type = rdbGermany.Content.ToString();
+            _type = String.Empty;
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
@@ -39,6 +40,11 @@ namespace FriwoControl
             else if (!Int32.TryParse(qtyText, out qty) || qty <= 0)
             {
                 CstMessageBox.Show("Invalid number!", "Quantity must be greater than zero!", CstMessageBoxIcon.Error);
+                return;
+            } 
+            else if (_type == String.Empty)
+            {
+                CstMessageBox.Show("Invalid product type!", "Please choose product type to continue!", CstMessageBoxIcon.Error);
                 return;
             }
 

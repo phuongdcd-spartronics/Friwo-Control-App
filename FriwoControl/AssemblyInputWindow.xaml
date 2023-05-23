@@ -25,7 +25,7 @@
 
             <TextBlock Grid.Column="1" Text="Select product type" HorizontalAlignment="Center" TextAlignment="Justify" FontSize="20pt" TextWrapping="Wrap" />
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
-                <telerik:RadRadioButton x:Name="rdbGermany" GroupName="Type" Content="Germany" Width="100" IsChecked="True" Checked="RadRadioButton_Checked" />
+                <telerik:RadRadioButton x:Name="rdbGermany" GroupName="Type" Content="Germany" Width="100" Checked="RadRadioButton_Checked" />
                 <telerik:RadRadioButton GroupName="Type" Content="Vietnam" Width="100" Checked="RadRadioButton_Checked" />
             </StackPanel>
 
